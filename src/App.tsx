@@ -1,12 +1,13 @@
-import { useEffect, useRef, useState } from 'react';
-import type { DataTable, DataTablePageEvent } from 'primereact/datatable';
+import React, { useEffect, useRef, useState } from 'react';
+
+import { DataTable, type DataTablePageEvent } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { OverlayPanel } from 'primereact/overlaypanel';
 import { Button } from 'primereact/button';
+import { InputText } from 'primereact/inputtext';
 
 import type { Artwork } from './types';
 import { fetchArtworks } from './services/api';
-
 export default function App() {
   const [rows, setRows] = useState<Artwork[]>([]);
   const [page, setPage] = useState(1);
